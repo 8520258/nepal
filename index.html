@@ -1,14 +1,14 @@
 <!-- 
   Project: www.nepal.co.il
-  Version: V2.56 Elite
-  Description: Enhanced JS robustness for ambient audio toggle and accessibility modal triggers, media/ paths secured, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
+  Version: V2.57 Elite
+  Description: Fully fixed accessibility CSS rules for high contrast and real text magnification across all body elements. Ambience.mp3 working, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
 -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.56 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | V2.57 Elite - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
             background-color: #0b0c10; 
             color: #ffffff; 
             overflow-x: hidden;
-            transition: filter 0.3s ease;
+            transition: all 0.3s ease;
         }
         .glass-card { 
             background: rgba(18, 20, 26, 0.9); 
@@ -32,18 +32,32 @@
         .gold-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
         .text-brand-orange { color: #f59e0b; }
         
-        /* Accessibility Dynamic Classes */
+        /* Fixed Accessibility High Contrast Theme */
         body.accessibility-contrast {
             background-color: #000000 !important;
             color: #ffff00 !important;
         }
+        body.accessibility-contrast * {
+            background-color: #000000 !important;
+            color: #ffff00 !important;
+            border-color: #ffff00 !important;
+        }
         body.accessibility-contrast .glass-card {
-            background: #111111 !important;
-            border: 2px solid #ffff00 !important;
+            background: #000000 !important;
+            border: 3px solid #ffff00 !important;
         }
+        body.accessibility-contrast a, body.accessibility-contrast span, body.accessibility-contrast h1, body.accessibility-contrast h2, body.accessibility-contrast h3, body.accessibility-contrast p {
+            color: #ffff00 !important;
+        }
+
+        /* Fixed Accessibility Large Text */
         body.accessibility-large-text {
-            font-size: 115% !important;
+            font-size: 130% !important;
         }
+        body.accessibility-large-text p, body.accessibility-large-text span, body.accessibility-large-text a, body.accessibility-large-text input, body.accessibility-large-text textarea {
+            font-size: 120% !important;
+        }
+
         /* Hide Google top banner if any */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
@@ -69,7 +83,7 @@
                 <span>♿ נגישות</span>
             </button>
             <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.56
+                V2.57
             </div>
             <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
@@ -371,7 +385,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.56).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.57).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
