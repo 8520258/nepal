@@ -1,14 +1,14 @@
 <!-- 
   Project: www.nepal.co.il
-  Version: V2.55 Elite
-  Description: Fully synchronized index.html pointing all assets, videos, audio, and images precisely to the 'media/' folder. Includes Nepali translation, accessibility, smooth scroll, and 2021-2026 Elad Kim footer link.
+  Version: V2.56 Elite
+  Description: Enhanced JS robustness for ambient audio toggle and accessibility modal triggers, media/ paths secured, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
 -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.55 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | V2.56 Elite - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@
 <body class="selection:bg-amber-500 selection:text-black">
 
     <!-- Custom Background Audio from media folder -->
-    <audio id="bgAudio" loop preload="none">
+    <audio id="bgAudio" loop preload="auto">
         <source src="media/ambience.mp3" type="audio/mpeg">
     </audio>
 
@@ -69,7 +69,7 @@
                 <span>♿ נגישות</span>
             </button>
             <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.55
+                V2.56
             </div>
             <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
@@ -103,7 +103,7 @@
         <div class="glass-card max-w-md w-full p-6 rounded-2xl border border-amber-500/40 space-y-6 relative shadow-2xl text-right">
             <div class="flex justify-between items-center border-b border-white/10 pb-4">
                 <h3 class="text-lg font-bold text-brand-orange flex items-center gap-2">♿ הגדרות נגישות</h3>
-                <button onclick="toggleAccessibilityModal()" class="text-white hover:text-brand-orange text-xl font-bold px-2">&times;</button>
+                <button onclick="toggleAccessibilityModal()" class="text-white hover:text-brand-orange text-xl font-bold px-2 cursor-pointer">&times;</button>
             </div>
             <div class="space-y-4 text-sm text-white">
                 <button onclick="toggleLargeText()" class="w-full bg-neutral-900 border border-white/10 hover:border-amber-500 p-3 rounded-xl flex justify-between items-center transition-all cursor-pointer">
@@ -312,25 +312,33 @@
 
         function toggleAccessibilityModal() {
             const modal = document.getElementById('accessibilityModal');
-            modal.classList.toggle('hidden');
+            if (modal) {
+                modal.classList.toggle('hidden');
+            }
         }
 
         function toggleLargeText() {
             document.body.classList.toggle('accessibility-large-text');
             const status = document.getElementById('textStatus');
-            status.innerText = document.body.classList.contains('accessibility-large-text') ? 'פעיל' : 'כבוי';
+            if (status) {
+                status.innerText = document.body.classList.contains('accessibility-large-text') ? 'פעיל' : 'כבוי';
+            }
         }
 
         function toggleHighContrast() {
             document.body.classList.toggle('accessibility-contrast');
             const status = document.getElementById('contrastStatus');
-            status.innerText = document.body.classList.contains('accessibility-contrast') ? 'פעיל' : 'כבוי';
+            if (status) {
+                status.innerText = document.body.classList.contains('accessibility-contrast') ? 'פעיל' : 'כבוי';
+            }
         }
 
         function resetAccessibility() {
             document.body.classList.remove('accessibility-large-text', 'accessibility-contrast');
-            document.getElementById('textStatus').innerText = 'כבוי';
-            document.getElementById('contrastStatus').innerText = 'כבוי';
+            const textStatus = document.getElementById('textStatus');
+            const contrastStatus = document.getElementById('contrastStatus');
+            if (textStatus) textStatus.innerText = 'כבוי';
+            if (contrastStatus) contrastStatus.innerText = 'כבוי';
         }
 
         const audio = document.getElementById('bgAudio');
@@ -339,27 +347,31 @@
         let isPlaying = false;
 
         function toggleAudio() {
+            if (!audio) return;
             if (isPlaying) {
                 audio.pause();
-                audioBtn.innerText = "הפעל אמביינט";
-                audioIcon.innerText = "🔔";
+                if (audioBtn) audioBtn.innerText = "הפעל אמביינט";
+                if (audioIcon) audioIcon.innerText = "🔔";
                 isPlaying = false;
             } else {
                 audio.play().then(() => {
-                    audioBtn.innerText = "השתק פס-קול";
-                    audioIcon.innerText = "🔇";
+                    if (audioBtn) audioBtn.innerText = "השתק פס-קול";
+                    if (audioIcon) audioIcon.innerText = "🔇";
                     isPlaying = true;
-                }).catch(e => { console.log("Audio blocked"); });
+                }).catch(e => { 
+                    console.log("Audio play blocked by browser:", e);
+                    alert("כדי להפעיל את האמביינט, לחץ אישור ואז על הכפתור שוב.");
+                });
             }
         }
 
         function sendToWhatsApp(e) {
             e.preventDefault();
-            const name = document.getElementById('clientName')->value;
-            const phone = document.getElementById('clientPhone')->value;
-            const notes = document.getElementById('clientNotes')->value;
+            const name = document.getElementById('clientName').value;
+            const phone = document.getElementById('clientPhone').value;
+            const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.55).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.56).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
