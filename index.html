@@ -1,14 +1,14 @@
 <!-- 
   Project: www.nepal.co.il
-  Version: V2.58 Elite
-  Description: Comprehensive accessibility style fixes for uniform text magnification across all small labels, buttons, and inputs. High contrast theme, ambience.mp3, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
+  Version: V2.59 Elite
+  Description: Final accessibility refinement ensuring footnote disclaimer text scales up uniformly with all other form and body texts. High contrast, ambience.mp3, Nepali translation, Elad Kim 2021-2026 footer link.
 -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.58 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | V2.59 Elite - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -46,11 +46,11 @@
             background: #000000 !important;
             border: 3px solid #ffff00 !important;
         }
-        body.accessibility-contrast a, body.accessibility-contrast span, body.accessibility-contrast h1, body.accessibility-contrast h2, body.accessibility-contrast h3, body.accessibility-contrast p, body.accessibility-contrast label {
+        body.accessibility-contrast a, body.accessibility-contrast span, body.accessibility-contrast h1, body.accessibility-contrast h2, body.accessibility-contrast h3, body.accessibility-contrast p, body.accessibility-contrast label, body.accessibility-contrast div {
             color: #ffff00 !important;
         }
 
-        /* Comprehensive Accessibility Large Text (Affects all elements equally) */
+        /* Comprehensive Accessibility Large Text (Includes all small text & disclaimers) */
         body.accessibility-large-text {
             font-size: 140% !important;
         }
@@ -63,7 +63,8 @@
         body.accessibility-large-text button,
         body.accessibility-large-text h1,
         body.accessibility-large-text h2,
-        body.accessibility-large-text h3 {
+        body.accessibility-large-text h3,
+        body.accessibility-large-text div {
             font-size: 125% !important;
         }
 
@@ -92,7 +93,7 @@
                 <span>♿ נגישות</span>
             </button>
             <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.58
+                V2.59
             </div>
             <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
@@ -394,7 +395,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.58).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.59).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
