@@ -1,17 +1,17 @@
-<!-- 
-  Project: www.nepal.co.il
-  Version: V2.60 Elite
-  Description: Balanced accessibility font scaling with proper line-height spacing to prevent text overlapping. High contrast theme, ambience.mp3, Nepali translation, Elad Kim 2021-2026 footer link.
--->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.60 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        if (window.location.hostname.endsWith('github.io')) {
+            window.location.replace('https://www.nepal.co.il' + window.location.pathname + window.location.search);
+        }
+    </script>
     <style>
         html {
             scroll-behavior: smooth;
@@ -32,7 +32,6 @@
         .gold-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
         .text-brand-orange { color: #f59e0b; }
         
-        /* Accessibility High Contrast Theme */
         body.accessibility-contrast {
             background-color: #000000 !important;
             color: #ffff00 !important;
@@ -50,7 +49,6 @@
             color: #ffff00 !important;
         }
 
-        /* Balanced & Clean Accessibility Large Text (Prevents overlapping with proper line spacing) */
         body.accessibility-large-text {
             font-size: 112% !important;
             line-height: 1.6 !important;
@@ -70,34 +68,26 @@
             line-height: 1.5 !important;
         }
 
-        /* Hide Google top banner if any */
         .goog-te-banner-frame { display: none !important; }
         body { top: 0px !important; }
     </style>
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
 
-    <!-- Custom Background Audio from media folder -->
     <audio id="bgAudio" loop preload="auto">
         <source src="media/ambience.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Floating Audio Control -->
     <button onclick="toggleAudio()" id="audioBtn" class="fixed top-20 right-4 z-40 bg-neutral-900/90 backdrop-blur-md border border-amber-500/20 text-brand-orange px-3 py-2 rounded-full shadow-lg flex items-center gap-1.5 text-xs font-bold hover:bg-neutral-800 transition-all cursor-pointer">
         <span id="audioIcon">🔔</span>
         <span id="audioText" class="hidden sm:inline">הפעל אמביינט</span>
     </button>
 
-    <!-- Navigation with Accessibility, Version & Google Translate Selector -->
     <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 md:px-8 py-3.5 bg-[#0b0c10]/95 backdrop-blur-md border-b border-white/10">
         <div class="flex items-center gap-2">
             <button onclick="toggleAccessibilityModal()" class="text-xs bg-amber-500/10 hover:bg-amber-500/20 text-brand-orange border border-amber-500/40 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 cursor-pointer font-bold shadow-md">
                 <span>♿ נגישות</span>
             </button>
-            <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.60
-            </div>
-            <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
                 <option value="he">🇮🇱 עברית</option>
                 <option value="ne">🇳🇵 नेपाली</option>
@@ -110,9 +100,9 @@
             </select>
         </div>
 
-        <div class="absolute left-1/2 -translate-x-1/2 text-xs md:text-base font-bold tracking-wider text-amber-500 lowercase">
+        <a href="#" class="absolute left-1/2 -translate-x-1/2 text-xs md:text-base font-bold tracking-wider text-amber-500 lowercase hover:text-amber-400 transition-colors">
             www.nepal.co.il
-        </div>
+        </a>
 
         <div class="hidden md:flex gap-6 items-center text-sm font-medium">
             <a href="#about" class="text-white hover:text-brand-orange transition-colors">החוויה</a>
@@ -124,7 +114,6 @@
         </div>
     </nav>
 
-    <!-- Accessibility Modal -->
     <div id="accessibilityModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="glass-card max-w-md w-full p-6 rounded-2xl border border-amber-500/40 space-y-6 relative shadow-2xl text-right">
             <div class="flex justify-between items-center border-b border-white/10 pb-4">
@@ -150,7 +139,6 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-16">
         <div class="absolute inset-0 z-0 bg-[#0b0c10]">
             <video autoplay muted loop playsinline webkit-playsinline x5-video-player-type="h5" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
@@ -182,7 +170,6 @@
         </div>
     </header>
 
-    <!-- Core Philosophy / About Section -->
     <section id="about" class="py-20 md:py-24 px-6 md:px-12 max-w-5xl mx-auto relative z-10 text-center space-y-6 md:space-y-8">
         <span class="text-brand-orange text-xs font-bold tracking-widest uppercase bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20 inline-block">
             הסטנדרט החדש בהימלאיה
@@ -195,14 +182,12 @@
         </p>
     </section>
 
-    <!-- Chapters Section with media paths -->
     <section id="chapters" class="py-20 md:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto relative z-10 space-y-16 md:space-y-24 border-t border-white/10">
         <div class="text-center space-y-3">
             <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white">המעטפת המלאה למסע שלך</h2>
             <p class="text-brand-orange text-sm sm:text-base max-w-lg mx-auto font-medium">חליפה לפי מידתך — בונים את הטיול לפי התקציב והדרישות שלך.</p>
         </div>
 
-        <!-- Culinary Chapter -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-amber-500/30">
             <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20 h-[240px] sm:h-[300px]">
                 <img src="media/food-bg.jpg" alt="קולינריית עילית בהימלאיה" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
@@ -216,7 +201,6 @@
             </div>
         </div>
 
-        <!-- Photographer Chapter -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-white/10">
             <div class="space-y-4 md:space-y-6 text-right">
                 <div class="text-brand-orange text-sm font-extrabold tracking-widest uppercase">ללא פספוסים</div>
@@ -230,7 +214,6 @@
             </div>
         </div>
 
-        <!-- Attractions Chapter -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-white/10">
             <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[240px] sm:h-[300px]">
                 <img src="media/masok.jpg" alt="מסוק לראש ההר" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
@@ -245,7 +228,6 @@
         </div>
     </section>
 
-    <!-- Corporate Trips Section -->
     <section id="corporate" class="py-20 px-4 sm:px-6 bg-[#090a0e] border-t border-white/10 relative z-10">
         <div class="max-w-4xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-amber-500/30 space-y-6 md:space-y-8">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20 h-[240px] sm:h-[320px] w-full">
@@ -267,7 +249,6 @@
         </div>
     </section>
 
-    <!-- Consultation Section -->
     <section id="consultation" class="py-20 px-4 sm:px-6 bg-[#07080b] border-t border-white/10 relative z-10">
         <div class="max-w-3xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-3xl shadow-2xl border border-amber-500/30">
             <div class="text-center mb-8 md:mb-10 space-y-3">
@@ -304,7 +285,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-10 md:py-12 px-6 text-center text-neutral-400 text-xs border-t border-white/10 bg-[#07080b] space-y-4">
         <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 pt-2 text-neutral-400 text-xs">
             <a href="privacy.html" class="hover:text-amber-400 transition-colors">מדיניות פרטיות ותנאים</a>
@@ -313,12 +293,14 @@
             <span>|</span>
             <p>&copy; 2021-2026 <a href="https://www.instagram.com/eladkim" target="_blank" class="text-amber-400 hover:underline font-bold">Elad Kim</a>. כל הזכויות שמורות.</p>
         </div>
+        <!-- Version info moved to the bottom in dark gray -->
+        <div class="text-neutral-600 text-[11px] pt-1 font-mono">
+            V2.62 Elite
+        </div>
     </footer>
 
-    <!-- Google Translate Hidden Element -->
     <div id="google_translate_element_hidden" style="display:none;"></div>
 
-    <!-- Scripts -->
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -397,7 +379,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.60).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.62).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
