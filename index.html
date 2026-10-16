@@ -1,59 +1,14 @@
-8520258
-nepal
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Files
-Go to file
-t
-T
-v2
-assets/video
-v2/assets/images
-ambience.mp3
-food-bg.jpg
-index.html
-masok.jpg
-privacy.html
-selfie.jpg
-team.jpg
-girl.jpg
-girl1.jpg
-image_77afbe.jpg
-index.html
-privacy.html
-nepal/v2
-/index.html
-8520258
-8520258
-Bump version to V2.52 and fix grammar
-70622b7
- · 
-19 minutes ago
-
-Code
-
-Blame
-368 lines (336 loc) · 23 KB
 <!-- 
   Project: www.nepal.co.il
-  Version: V2.52 Elite
-  Description: Fixed grammar in About section ("וכן חדרים נקיים"), consistent white/orange typography, ambience.mp3 connected, Nepali translation supported, Elad Kim 2021-2026 footer credit.
+  Version: V2.55 Elite
+  Description: Fully synchronized index.html pointing all assets, videos, audio, and images precisely to the 'media/' folder. Includes Nepali translation, accessibility, smooth scroll, and 2021-2026 Elad Kim footer link.
 -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.52 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | V2.55 Elite - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -96,9 +51,9 @@ Blame
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
 
-    <!-- Custom Uploaded Background Audio (ambience.mp3) -->
+    <!-- Custom Background Audio from media folder -->
     <audio id="bgAudio" loop preload="none">
-        <source src="ambience.mp3" type="audio/mpeg">
+        <source src="media/ambience.mp3" type="audio/mpeg">
     </audio>
 
     <!-- Floating Audio Control -->
@@ -114,7 +69,7 @@ Blame
                 <span>♿ נגישות</span>
             </button>
             <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.52
+                V2.55
             </div>
             <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
@@ -129,7 +84,7 @@ Blame
             </select>
         </div>
 
-        <div class="absolute left-1/2 -translate-x-1/2 text-xs md:text-base font-bold tracking-wider text-brand-orange lowercase">
+        <div class="absolute left-1/2 -translate-x-1/2 text-xs md:text-base font-bold tracking-wider text-amber-500 lowercase">
             www.nepal.co.il
         </div>
 
@@ -173,7 +128,7 @@ Blame
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-16">
         <div class="absolute inset-0 z-0 bg-[#0b0c10]">
             <video autoplay muted loop playsinline webkit-playsinline x5-video-player-type="h5" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
-                <source src="assets/video/mountain-bg.mp4" type="video/mp4">
+                <source src="media/mountain-bg.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/40 to-black/60"></div>
         </div>
@@ -201,7 +156,7 @@ Blame
         </div>
     </header>
 
-    <!-- Core Philosophy / About Section (Fixed Grammar) -->
+    <!-- Core Philosophy / About Section -->
     <section id="about" class="py-20 md:py-24 px-6 md:px-12 max-w-5xl mx-auto relative z-10 text-center space-y-6 md:space-y-8">
         <span class="text-brand-orange text-xs font-bold tracking-widest uppercase bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20 inline-block">
             הסטנדרט החדש בהימלאיה
@@ -210,11 +165,11 @@ Blame
             מתחילים באיסוף של כבוד משדה התעופה. <br class="hidden sm:inline" />מכאן, אנחנו יחד איתך.
         </h2>
         <p class="text-white text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-3xl mx-auto">
-            עם ג'יפ מפואר וממוזג לאורך כל הטיול, 2 מאבטחים 24/7 כדי לשמור לך על החלומות ועליך, וכן חדרים נקיים, מאובזרים, ממוזגים ומפנקים כדי שהלילה יהיה טוב. צוות מקצועי ואמין שידאג שהטיול הזה יהיה חוויה בלתי נשכחת.
+            עם ג'יפ מפואר וממוזג, 2 מאבטחים 24/7 וחדרים מפנקים לאורך כל המסע, נדאג שכל רגע יהיה חוויה בלתי נשכחת.
         </p>
     </section>
 
-    <!-- Chapters Section -->
+    <!-- Chapters Section with media paths -->
     <section id="chapters" class="py-20 md:py-24 px-4 sm:px-6 md:px-12 max-w-7xl mx-auto relative z-10 space-y-16 md:space-y-24 border-t border-white/10">
         <div class="text-center space-y-3">
             <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-white">המעטפת המלאה למסע שלך</h2>
@@ -224,7 +179,7 @@ Blame
         <!-- Culinary Chapter -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-amber-500/30">
             <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20 h-[240px] sm:h-[300px]">
-                <img src="food-bg.jpg" alt="קולינריית עילית בהימלאיה" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
+                <img src="media/food-bg.jpg" alt="קולינריית עילית בהימלאיה" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
             </div>
             <div class="order-1 lg:order-2 space-y-4 md:space-y-6 text-right">
                 <div class="text-brand-orange text-sm font-extrabold tracking-widest uppercase">טעמים, ריחות וצבעים</div>
@@ -245,14 +200,14 @@ Blame
                 </p>
             </div>
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[240px] sm:h-[300px]">
-                <img src="selfie.jpg" alt="צלם מקצועי צמוד" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
+                <img src="media/selfie.jpg" alt="צלם מקצועי צמוד" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
             </div>
         </div>
 
         <!-- Attractions Chapter -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-white/10">
             <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 h-[240px] sm:h-[300px]">
-                <img src="masok.jpg" alt="מסוק לראש ההר" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
+                <img src="media/masok.jpg" alt="מסוק לראש ההר" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
             </div>
             <div class="order-1 lg:order-2 space-y-4 md:space-y-6 text-right">
                 <div class="text-brand-orange text-sm font-extrabold tracking-widest uppercase">ריגושים ואטרקציות</div>
@@ -268,7 +223,7 @@ Blame
     <section id="corporate" class="py-20 px-4 sm:px-6 bg-[#090a0e] border-t border-white/10 relative z-10">
         <div class="max-w-4xl mx-auto glass-card p-6 sm:p-8 md:p-12 rounded-3xl border border-amber-500/30 space-y-6 md:space-y-8">
             <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-amber-500/20 h-[240px] sm:h-[320px] w-full">
-                <img src="team.jpg" alt="טיולי חברה וקבוצות פרימיום" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
+                <img src="media/team.jpg" alt="טיולי חברה וקבוצות פרימיום" loading="lazy" class="w-full h-full object-cover filter brightness-90 contrast-105">
                 <div class="absolute bottom-4 right-4 bg-black/70 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-white/10 text-brand-orange text-xs font-bold uppercase">
                     חוויה עסקית וארגונית
                 </div>
@@ -400,11 +355,11 @@ Blame
 
         function sendToWhatsApp(e) {
             e.preventDefault();
-            const name = document.getElementById('clientName').value;
-            const phone = document.getElementById('clientPhone').value;
-            const notes = document.getElementById('clientNotes').value;
+            const name = document.getElementById('clientName')->value;
+            const phone = document.getElementById('clientPhone')->value;
+            const notes = document.getElementById('clientNotes')->value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.52).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.55).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
