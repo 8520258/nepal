@@ -1,14 +1,14 @@
 <!-- 
   Project: www.nepal.co.il
-  Version: V2.57 Elite
-  Description: Fully fixed accessibility CSS rules for high contrast and real text magnification across all body elements. Ambience.mp3 working, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
+  Version: V2.58 Elite
+  Description: Comprehensive accessibility style fixes for uniform text magnification across all small labels, buttons, and inputs. High contrast theme, ambience.mp3, Nepali translation, smooth scroll, Elad Kim 2021-2026 footer link.
 -->
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il | V2.57 Elite - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | V2.58 Elite - נפאל כמו שלא ראית מעולם</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
         .gold-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
         .text-brand-orange { color: #f59e0b; }
         
-        /* Fixed Accessibility High Contrast Theme */
+        /* Accessibility High Contrast Theme */
         body.accessibility-contrast {
             background-color: #000000 !important;
             color: #ffff00 !important;
@@ -46,16 +46,25 @@
             background: #000000 !important;
             border: 3px solid #ffff00 !important;
         }
-        body.accessibility-contrast a, body.accessibility-contrast span, body.accessibility-contrast h1, body.accessibility-contrast h2, body.accessibility-contrast h3, body.accessibility-contrast p {
+        body.accessibility-contrast a, body.accessibility-contrast span, body.accessibility-contrast h1, body.accessibility-contrast h2, body.accessibility-contrast h3, body.accessibility-contrast p, body.accessibility-contrast label {
             color: #ffff00 !important;
         }
 
-        /* Fixed Accessibility Large Text */
+        /* Comprehensive Accessibility Large Text (Affects all elements equally) */
         body.accessibility-large-text {
-            font-size: 130% !important;
+            font-size: 140% !important;
         }
-        body.accessibility-large-text p, body.accessibility-large-text span, body.accessibility-large-text a, body.accessibility-large-text input, body.accessibility-large-text textarea {
-            font-size: 120% !important;
+        body.accessibility-large-text p, 
+        body.accessibility-large-text span, 
+        body.accessibility-large-text a, 
+        body.accessibility-large-text input, 
+        body.accessibility-large-text textarea,
+        body.accessibility-large-text label,
+        body.accessibility-large-text button,
+        body.accessibility-large-text h1,
+        body.accessibility-large-text h2,
+        body.accessibility-large-text h3 {
+            font-size: 125% !important;
         }
 
         /* Hide Google top banner if any */
@@ -83,7 +92,7 @@
                 <span>♿ נגישות</span>
             </button>
             <div class="text-[11px] text-brand-orange font-mono font-bold hidden sm:block">
-                V2.57
+                V2.58
             </div>
             <!-- Language Selector Dropdown (Including Nepali) -->
             <select id="google_translate_element" onchange="translateSite(this.value)" class="bg-neutral-900/90 text-brand-orange border border-amber-500/30 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-amber-500 cursor-pointer">
@@ -385,7 +394,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.57).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.58).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
