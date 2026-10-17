@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>www.nepal.co.il - נפאל כמו שלא ראית מעולם</title>
+    <title>www.nepal.co.il | טיול יוקרה מאורגן לנפאל לגילאי 40+ / 50+</title>
+    <meta name="description" content="נפאל כמו שלא ראית מעולם. טיול יוקרה מאורגן לגילאי 40+/50+/60+ עם כל הפינוקים, שף פרטי, מאבטחים וג'יפ מפואר.">
+    
+    <!-- Open Graph / WhatsApp Sharing Meta Tags -->
+    <meta property="og:title" content="www.nepal.co.il | טיול יוקרה מאורגן לנפאל לגילאי 40+ / 50+">
+    <meta property="og:description" content="נפאל כמו שלא ראית מעולם. ריגושים, חוויות ופינוקים ללא פשרות בהימלאיה.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.nepal.co.il">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -141,7 +149,7 @@
 
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-16">
         <div class="absolute inset-0 z-0 bg-[#0b0c10]">
-            <video autoplay muted loop playsinline webkit-playsinline x5-video-player-type="h5" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
+            <video autoplay muted loop playsinline webkit-playsinline x5-video-player-type="h5" poster="media/poster.jpg" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
                 <source src="media/mountain-bg.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/40 to-black/60"></div>
@@ -297,7 +305,7 @@
             האתר נבנה על ידי <a href="https://www.instagram.com/eladkim" target="_blank" class="text-amber-400 hover:underline font-bold">Elad Kim</a>. כל הזכויות שמורות.
         </div>
         <div class="text-neutral-500 text-[11px] font-mono">
-            &copy; 2021-2026 | V2.67 Elite
+            &copy; 2021-2026 | V2.69 Elite
         </div>
     </footer>
 
@@ -381,7 +389,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.67).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.69).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
