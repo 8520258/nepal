@@ -1,115 +1,113 @@
-8520258
-nepal
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Files
-Go to file
-t
-T
-v2
-assets/video
-v2/assets/images
-ambience.mp3
-food-bg.jpg
-index.html
-masok.jpg
-privacy.html
-selfie.jpg
-team.jpg
-girl.jpg
-girl1.jpg
-image_77afbe.jpg
-index.html
-privacy.html
-nepal/v2
-/privacy.html
-8520258
-8520258
-Update privacy policy and improve accessibility section
-7e2c7b2
- · 
-3 hours ago
-
-Code
-
-Blame
-69 lines (60 loc) · 4.27 KB
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="utf-8" />
-<title>www.nepal.co.il | מדיניות פרטיות ותנאי שימוש</title>
-<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-<style>
-    body { font-family: 'Assistant', sans-serif; background-color: #0b0c10; color: #f3f4f6; }
-    .glass-card { background: rgba(18, 20, 26, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(245, 158, 11, 0.15); }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.nepal.co.il | מדיניות פרטיות והצהרת נגישות</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Assistant', sans-serif; 
+            background-color: #0b0c10; 
+            color: #ffffff; 
+            line-height: 1.7;
+        }
+        .glass-card { 
+            background: rgba(18, 20, 26, 0.9); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(245, 158, 11, 0.15); 
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+        }
+        .text-brand-orange { color: #f59e0b; }
+    </style>
 </head>
+<body class="selection:bg-amber-500 selection:text-black min-h-screen flex flex-col justify-between">
 
-<body class="selection:bg-amber-500 selection:text-black">
+    <!-- Top Navigation Bar -->
+    <nav class="w-full px-6 md:px-12 py-4 bg-[#0b0c10]/95 backdrop-blur-md border-b border-white/10 flex justify-between items-center">
+        <a href="index.html" class="text-sm md:text-base font-bold tracking-wider text-amber-500 lowercase hover:text-amber-400 transition-colors">
+            &larr; חזרה לאתר www.nepal.co.il
+        </a>
+        <div class="text-xs text-neutral-400">
+            מסמכי מדיניות ומשפט
+        </div>
+    </nav>
 
-<nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-4 bg-[#0b0c10]/95 backdrop-blur-md border-b border-white/10">
-    <div class="text-xs text-amber-400 font-mono font-bold">V2.43</div>
-    <div class="absolute left-1/2 -translate-x-1/2 text-sm md:text-base font-bold tracking-wider text-amber-500 lowercase">
-        www.nepal.co.il
-    </div>
-    <div class="flex gap-6 items-center text-sm font-medium">
-        <a href="index.html" class="text-neutral-300 hover:text-amber-400 transition-colors">חזרה לאתר</a>
-    </div>
-</nav>
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-16 space-y-12 my-auto w-full">
+        
+        <!-- Header Section -->
+        <div class="text-center space-y-4">
+            <span class="text-brand-orange text-xs font-bold tracking-widest uppercase bg-amber-500/10 px-4 py-2 rounded-full border border-amber-500/20 inline-block">
+                שקיפות ואמינות ללקוחותינו
+            </span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white">מדיניות פרטיות והצהרת נגישות</h1>
+            <p class="text-neutral-400 text-sm md:text-base">עודכן לאחרונה: אוקטובר 2026</p>
+        </div>
 
-<div class="pt-32 pb-20 px-6 md:px-12 max-w-4xl mx-auto">
-    <div class="glass-card p-8 md:p-12 rounded-3xl space-y-8 shadow-2xl">
-        <h1 class="text-3xl md:text-4xl font-extrabold text-white text-center border-b border-white/10 pb-6">
-            מדיניות פרטיות, תנאי שימוש והצהרת נגישות
-        </h1>
-
-        <div class="space-y-6 text-neutral-300 text-sm md:text-base leading-relaxed font-light">
-            <div>
-                <h3 class="text-amber-400 font-bold text-lg mb-2">1. מבוא והתחייבות לפרטיות</h3>
+        <!-- Section 1: Privacy Policy -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl space-y-6 text-right border border-amber-500/20">
+            <h2 class="text-2xl font-bold text-brand-orange flex items-center gap-2">
+                🔒 מדיניות פרטיות ואבטחת מידע
+            </h2>
+            <div class="space-y-4 text-neutral-300 text-sm md:text-base font-light">
                 <p>
-                    בפעילותך מול <strong>www.nepal.co.il</strong>, אתה חולק עמנו מידע אישי. אנו מבינים את החשיבות העליונה בהגנה על פרטיותך ומחויבים לשמירתו בהתאם לדין.
+                    אתר <strong class="text-white">www.nepal.co.il</strong> (להלן: "האתר") מכבד את פרטיותם של המשתמשים והגולשים בו. מדיניות זו נועדה לפרט את האופן שבו אנו אופים, משתמשים ושומרים את המידע הנמסר לנו.
                 </p>
-            </div>
-
-            <div>
-                <h3 class="text-amber-400 font-bold text-lg mb-2">2. חומרים חזותיים והמחשה</h3>
-                <p class="bg-neutral-900/80 p-4 rounded-xl border border-amber-500/20 text-neutral-200">
-                    כל התמונות, הסרטונים והאלמנטים הוויזואליים המוצגים באתר נועדו להמחשה בלבד. חלקם עשויים להיות תוצר של טכנולוגיות מתקדמות, לרבות בינה מלאכותית (AI), ואינם מהווים מצג שווא או התחייבות חוזית. פרטי המסע המלאים והמדויקים יסוכמו אך ורק מול הלקוח במסגרת תיאום הייעוץ וההתקשרות האישית.
-                </p>
-            </div>
-
-            <div>
-                <h3 class="text-amber-400 font-bold text-lg mb-2">3. הצהרת נגישות</h3>
+                <h3 class="text-lg font-bold text-white pt-2">1. איסוף מידע ושימוש בו</h3>
                 <p>
-                    אנו רואים חשיבות עליונה בהבטחת גישה שוויונית לאנשים עם מוגבלות. האתר הותאם בהתאם להנחיות הנגישות לתקן הישראלי (תקן 5568) ולרמה AA. האתר כולל תפריט נגישות מובנה המאפשר הגדלת טקסט ושינוי ניגודיות. נתקלתם בקושי? ניתן לפנות אלינו דרך ערוצי הקשר באתר.
+                    האתר אינו שומר מאגרי מידע מוצפנים או כספות נתונים רגישות בשרת חיצוני. בעת פנייה דרך טופס יצירת הקשר באתר, הנתונים (שם מלא, מספר טלפון והערות אישיות) מועברים ישירות להמשך טיפול ותיאום אישי דרך אפליקציית WhatsApp. פרטים אלו משמשים אך ורק לצורך מתן מענה ממוקד, בניית הצעת מחיר ותיאום מסעות פרימיום, ואינם מועברים בשום מקרה לצד ג' כלשהו.
                 </p>
-            </div>
-
-            <div>
-                <h3 class="text-amber-400 font-bold text-lg mb-2">4. איסוף ושימוש במידע</h3>
+                <h3 class="text-lg font-bold text-white pt-2">2. עוגיות (Cookies) ואנליטיקה</h3>
                 <p>
-                    הפרטים הנאספים (שם ומספר טלפון/וואטסאפ) משמשים אך ורק לצורך מתן מענה לפניות, תיאום שיחות ייעוץ ובניית תוכניות מסע מותאמות אישית. הפרטים אינם מועברים לצד שלישי כלשהו ללא הסכמה.
+                    האתר עשוי לעשות שימוש בטכנולוגיות מקובלות כגון עוגיות (Cookies) לצורך תפעולו השוטף והתקין, אבטחת מידע ושיפור חוויית הגלישה. באפשרותך לחסום או למחוק עוגיות דרך הגדרות הדפדפן שלך בכל עת.
                 </p>
             </div>
         </div>
-    </div>
-</div>
 
-<footer class="py-8 text-center text-neutral-500 text-xs border-t border-white/10 bg-[#07080b]">
-    <p>&copy; 2026 www.nepal.co.il (V2.43). כל הזכויות שמורות.</p>
-</footer>
+        <!-- Section 2: Accessibility Statement -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl space-y-6 text-right border border-white/10">
+            <h2 class="text-2xl font-bold text-brand-orange flex items-center gap-2">
+                ♿ הצהרת נגישות (תקן 5568)
+            </h2>
+            <div class="space-y-4 text-neutral-300 text-sm md:text-base font-light">
+                <p>
+                    אנו רואים חשיבות עליונה בהנגשת אתרינו לכלל האוכלוסייה, לרבות אנשים עם מוגבלויות, מתוך אמונה בשוויון הזדמנויות ובמתן שירות מכובד ונגיש. האתר מותאם להנחיות הנגישות לתקן הישראלי ת"י 5568 ברמת AA ובהתאם להנחיות WCAG 2.1.
+                </p>
+                <h3 class="text-lg font-bold text-white pt-2">אמצעי הנגישות באתר</h3>
+                <ul class="list-disc list-inside space-y-2 pr-4 text-neutral-300">
+                    <li>תפריט נגישות מובנה המאפשר הגדלת טקסטים לנוחות הקוראים.</li>
+                    <li>מצב ניגודיות גבוהה (שחור/צהוב) לכבדי ראייה.</li>
+                    <li>מבנה קוד נקי ותמיכה מלאה בניווט מקלדת ומסכי הקראה (Screen Readers).</li>
+                    <li>התאמה מלאה למכשירים ניידים, טאבלטים ומחשבים שולחניים.</li>
+                </ul>
+                <h3 class="text-lg font-bold text-white pt-2">פניות בנושא נגישות</h3>
+                <p>
+                    אם נתקלת בקושי כלשהו בגלישה באתר או יש לך הערה לשיפור, נשמח שתעדכן אותנו כדי שנוכל לטפל בכך בהקדם באמצעות פנייה ישירה דרך האתר או בוואטסאפ.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Terms & Disclaimers -->
+        <div class="glass-card p-6 md:p-10 rounded-3xl space-y-6 text-right border border-white/10">
+            <h2 class="text-2xl font-bold text-brand-orange flex items-center gap-2">
+                📜 תנאי שימוש והגבלת אחריות
+            </h2>
+            <div class="space-y-4 text-neutral-300 text-sm md:text-base font-light">
+                <p>
+                    כל התכנים, התמונות, הסרטונים והעיצובים המוצגים באתר <strong class="text-white">www.nepal.co.il</strong> הם רכושו הבלעדי של בעלי האתר ואין להעתיקם, לשכפלם או להשתמש בהם ללא אישור מראש ובכתב. האמור באתר מנוסח בלשון זכר מטעמי נוחות בלבד, אך מיועד לנשים ולגברים כאחד.
+                </p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center text-neutral-500 text-xs border-t border-white/10 bg-[#07080b] space-y-2">
+        <p>&copy; 2021-2026 www.nepal.co.il &bull; כל הזכויות שמורות</p>
+        <p>נבנה באהבה ובסטנדרט פרימיום עולמי</p>
+    </footer>
 
 </body>
 </html>
- 
