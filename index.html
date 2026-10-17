@@ -12,10 +12,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.nepal.co.il">
 
+    <!-- Performance: Preconnect & Preload Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script>
+        // Secure GitHub.io custom domain redirect
         if (window.location.hostname.endsWith('github.io')) {
             window.location.replace('https://www.nepal.co.il' + window.location.pathname + window.location.search);
         }
@@ -82,7 +87,7 @@
 </head>
 <body class="selection:bg-amber-500 selection:text-black">
 
-    <audio id="bgAudio" loop preload="auto">
+    <audio id="bgAudio" loop preload="none">
         <source src="media/ambience.mp3" type="audio/mpeg">
     </audio>
 
@@ -147,9 +152,10 @@
         </div>
     </div>
 
+    <!-- Hero Section with Optimized Background Video -->
     <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-16">
         <div class="absolute inset-0 z-0 bg-[#0b0c10]">
-            <video autoplay muted loop playsinline webkit-playsinline x5-video-player-type="h5" poster="media/poster.jpg" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
+            <video autoplay muted loop playsinline webkit-playsinline preload="auto" class="w-full h-full object-cover opacity-80" onerror="this.style.display='none';">
                 <source src="media/mountain-bg.mp4" type="video/mp4">
             </video>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/40 to-black/60"></div>
@@ -305,12 +311,13 @@
             האתר נבנה על ידי <a href="https://www.instagram.com/eladkim" target="_blank" class="text-amber-400 hover:underline font-bold">Elad Kim</a>. כל הזכויות שמורות.
         </div>
         <div class="text-neutral-500 text-[11px] font-mono">
-            &copy; 2021-2026 | V2.69 Elite
+            &copy; 2021-2026 | V2.70 Elite
         </div>
     </footer>
 
     <div id="google_translate_element_hidden" style="display:none;"></div>
 
+    <!-- Deferred Scripts for Maximum Performance -->
     <script>
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
@@ -389,10 +396,10 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.69).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.70).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script async type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
