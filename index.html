@@ -286,16 +286,17 @@
     </section>
 
     <footer class="py-10 md:py-12 px-6 text-center text-neutral-400 text-xs border-t border-white/10 bg-[#07080b] space-y-4">
-        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 pt-2 text-neutral-400 text-xs">
+        <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 pt-2 text-neutral-400 text-xs dir-rtl">
             <a href="privacy.html" class="hover:text-amber-400 transition-colors">מדיניות פרטיות ותנאים</a>
             <span>|</span>
             <a href="privacy.html" class="hover:text-amber-400 transition-colors">הצהרת נגישות (תקן 5568)</a>
             <span>|</span>
-            <p>&copy; 2021-2026 <a href="https://www.instagram.com/eladkim" target="_blank" class="text-amber-400 hover:underline font-bold">Elad Kim</a>. האתר נבנה על ידי.</p>
+            <span dir="rtl" style="unicode-bidi: embed;">
+                האתר נבנה על ידי <a href="https://www.instagram.com/eladkim" target="_blank" class="text-amber-400 hover:underline font-bold">Elad Kim</a> &copy; 2021-2026. כל הזכויות שמורות.
+            </span>
         </div>
-        <!-- Version info moved to the bottom in dark gray -->
         <div class="text-neutral-600 text-[11px] pt-1 font-mono">
-            V2.62 Elite
+            V2.63 Elite
         </div>
     </footer>
 
@@ -379,7 +380,7 @@
             const phone = document.getElementById('clientPhone').value;
             const notes = document.getElementById('clientNotes').value;
             const myPhoneNumber = "972500000000"; 
-            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.62).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
+            const message = `היי, הגעתי דרך האתר www.nepal.co.il (V2.63).\nאני מעוניין בשיחת ייעוץ לתפירת מסע.\n\nשם: ${name}\nטלפון: ${phone}\nהערות: ${notes || 'ללא'}`;
             window.open(`https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
